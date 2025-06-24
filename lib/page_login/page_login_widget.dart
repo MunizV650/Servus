@@ -200,7 +200,7 @@ class _PageLoginWidgetState extends State<PageLoginWidget>
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 16.0, 0.0, 0.0),
                             child: Text(
-                              'Use a conta abaixo para fazer login - V8',
+                              'Use a conta abaixo para fazer login - V12',
                               style: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
