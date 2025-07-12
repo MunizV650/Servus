@@ -33,11 +33,10 @@ class _PageLoginWidgetState extends State<PageLoginWidget>
     super.initState();
     _model = createModel(context, () => PageLoginModel());
 
-    _model.txtEmailTextController ??=
-        TextEditingController(text: 'teste@convidado.com');
+    _model.txtEmailTextController ??= TextEditingController();
     _model.txtEmailFocusNode ??= FocusNode();
 
-    _model.txtSenhaTextController ??= TextEditingController(text: 'M_m12345');
+    _model.txtSenhaTextController ??= TextEditingController();
     _model.txtSenhaFocusNode ??= FocusNode();
 
     animationsMap.addAll({
@@ -109,7 +108,10 @@ class _PageLoginWidgetState extends State<PageLoginWidget>
       ),
     });
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {
+          _model.txtEmailTextController?.text = 'teste@convidado.com';
+          _model.txtSenhaTextController?.text = 'M_m12345';
+        }));
   }
 
   @override
@@ -489,8 +491,17 @@ class _PageLoginWidgetState extends State<PageLoginWidget>
                                     }
 
                                     context.pushNamedAuth(
-                                        HomePageWidget.routeName,
-                                        context.mounted);
+                                      HomePageWidget.routeName,
+                                      context.mounted,
+                                      extra: <String, dynamic>{
+                                        kTransitionInfoKey: TransitionInfo(
+                                          hasTransition: true,
+                                          transitionType:
+                                              PageTransitionType.fade,
+                                          duration: Duration(milliseconds: 0),
+                                        ),
+                                      },
+                                    );
                                   },
                                   text: 'Entrar',
                                   options: FFButtonOptions(

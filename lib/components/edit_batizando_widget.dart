@@ -1460,7 +1460,12 @@ class _EditBatizandoWidgetState extends State<EditBatizandoWidget>
                                         child: Text(
                                           valueOrDefault<String>(
                                             dateTimeFormat(
-                                                "d/M/y", _model.pmtDtnasc),
+                                              "d/M/y",
+                                              _model.pmtDtnasc,
+                                              locale:
+                                                  FFLocalizations.of(context)
+                                                      .languageCode,
+                                            ),
                                             'Dt Nasc',
                                           ),
                                           textAlign: TextAlign.start,
@@ -1604,7 +1609,12 @@ class _EditBatizandoWidgetState extends State<EditBatizandoWidget>
                                         child: Text(
                                           valueOrDefault<String>(
                                             dateTimeFormat(
-                                                "d/M/y", _model.pmtDtConv),
+                                              "d/M/y",
+                                              _model.pmtDtConv,
+                                              locale:
+                                                  FFLocalizations.of(context)
+                                                      .languageCode,
+                                            ),
                                             'Dt Conversão',
                                           ),
                                           textAlign: TextAlign.start,
@@ -1756,7 +1766,12 @@ class _EditBatizandoWidgetState extends State<EditBatizandoWidget>
                                         child: Text(
                                           valueOrDefault<String>(
                                             dateTimeFormat(
-                                                "d/M/y", _model.pmtDtPrevia),
+                                              "d/M/y",
+                                              _model.pmtDtPrevia,
+                                              locale:
+                                                  FFLocalizations.of(context)
+                                                      .languageCode,
+                                            ),
                                             'Dt Prévia',
                                           ),
                                           textAlign: TextAlign.start,
@@ -1854,7 +1869,12 @@ class _EditBatizandoWidgetState extends State<EditBatizandoWidget>
                                         child: Text(
                                           valueOrDefault<String>(
                                             dateTimeFormat(
-                                                "d/M/y", _model.pmtDtCadastro),
+                                              "d/M/y",
+                                              _model.pmtDtCadastro,
+                                              locale:
+                                                  FFLocalizations.of(context)
+                                                      .languageCode,
+                                            ),
                                             'Dt Cdastro',
                                           ),
                                           textAlign: TextAlign.start,

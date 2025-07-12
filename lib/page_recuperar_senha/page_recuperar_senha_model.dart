@@ -1,4 +1,3 @@
-import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/index.dart';
 import 'page_recuperar_senha_widget.dart' show PageRecuperarSenhaWidget;
@@ -19,8 +18,6 @@ class PageRecuperarSenhaModel
   late bool txtConfirmarSenhaVisibility;
   String? Function(BuildContext, String?)?
       txtConfirmarSenhaTextControllerValidator;
-  // Stores action output result for [Backend Call - API (ApiRecuperarSenha)] action in btnRecuperarSenha widget.
-  ApiCallResponse? apiResultnwt;
 
   @override
   void initState(BuildContext context) {

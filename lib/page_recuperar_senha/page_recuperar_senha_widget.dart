@@ -1,5 +1,4 @@
 import '/auth/supabase_auth/auth_util.dart';
-import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -470,81 +469,16 @@ class _PageRecuperarSenhaWidgetState extends State<PageRecuperarSenhaWidget>
                                   0.0, 0.0, 0.0, 8.0),
                               child: FFButtonWidget(
                                 onPressed: () async {
-                                  if (_model.txtSenhaTextController.text ==
-                                      valueOrDefault<String>(
-                                        _model.txtConfirmarSenhaTextController
-                                            .text,
-                                        '-',
-                                      )) {
-                                    _model.apiResultnwt =
-                                        await ApiRecuperarSenhaCall.call(
-                                      userToken: currentJwtToken,
-                                      email: currentUserEmail,
-                                      password: valueOrDefault<String>(
+                                  await authManager.updatePassword(
+                                    newPassword:
                                         _model.txtSenhaTextController.text,
-                                        '-',
-                                      ),
-                                    );
-
-                                    if ((_model.apiResultnwt?.succeeded ??
-                                        true)) {
-                                      ScaffoldMessenger.of(context)
-                                          .showSnackBar(
-                                        SnackBar(
-                                          content: Text(
-                                            'Senha Alterada com Sucesso !!!',
-                                            style: TextStyle(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primaryText,
-                                            ),
-                                          ),
-                                          duration:
-                                              Duration(milliseconds: 4000),
-                                          backgroundColor:
-                                              FlutterFlowTheme.of(context)
-                                                  .secondary,
-                                        ),
-                                      );
-                                    } else {
-                                      ScaffoldMessenger.of(context)
-                                          .showSnackBar(
-                                        SnackBar(
-                                          content: Text(
-                                            'Senha não Alterada !!!',
-                                            style: TextStyle(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primaryText,
-                                            ),
-                                          ),
-                                          duration:
-                                              Duration(milliseconds: 4000),
-                                          backgroundColor:
-                                              FlutterFlowTheme.of(context)
-                                                  .secondary,
-                                        ),
-                                      );
-                                    }
-                                  } else {
-                                    ScaffoldMessenger.of(context).showSnackBar(
-                                      SnackBar(
-                                        content: Text(
-                                          'As Senhas não Conferem !!!',
-                                          style: TextStyle(
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryText,
-                                          ),
-                                        ),
-                                        duration: Duration(milliseconds: 4000),
-                                        backgroundColor:
-                                            FlutterFlowTheme.of(context)
-                                                .secondary,
-                                      ),
-                                    );
-                                  }
-
+                                    context: context,
+                                  );
                                   safeSetState(() {});
+
+                                  context.pushNamedAuth(
+                                      PageLoginWidget.routeName,
+                                      context.mounted);
                                 },
                                 text: 'Alterar Senha',
                                 options: FFButtonOptions(
@@ -594,9 +528,9 @@ class _PageRecuperarSenhaWidgetState extends State<PageRecuperarSenhaWidget>
                                   0.0, 0.0, 0.0, 4.0),
                               child: FFButtonWidget(
                                 onPressed: () async {
-                                  context.goNamed(PageLoginWidget.routeName);
+                                  context.safePop();
                                 },
-                                text: 'Voltar ao Login',
+                                text: 'Voltar',
                                 options: FFButtonOptions(
                                   width: 230.0,
                                   height: 40.0,

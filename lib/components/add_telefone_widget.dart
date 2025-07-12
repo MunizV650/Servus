@@ -336,9 +336,7 @@ class _AddTelefoneWidgetState extends State<AddTelefoneWidget>
                                   return FlutterFlowDropDown<int>(
                                     controller: _model
                                             .dropDownTipoTelValueController ??=
-                                        FormFieldController<int>(
-                                      _model.dropDownTipoTelValue ??= 0,
-                                    ),
+                                        FormFieldController<int>(null),
                                     options: List<int>.from(
                                         dropDownTipoTelTbtptelRowList
                                             .map((e) => e.idtbtel)

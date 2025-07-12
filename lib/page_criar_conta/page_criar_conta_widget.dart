@@ -739,6 +739,10 @@ class _PageCriarContaWidgetState extends State<PageCriarContaWidget>
                                           _model.txtNomeTextController.text,
                                       'uid': currentUserUid,
                                     });
+
+                                    context.pushNamedAuth(
+                                        PageLoginWidget.routeName,
+                                        context.mounted);
                                   },
                                   text: 'Criar Conta',
                                   options: FFButtonOptions(

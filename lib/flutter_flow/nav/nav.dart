@@ -162,11 +162,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => PageCidadeWidget(),
         ),
         FFRoute(
-          name: PagetokenWidget.routeName,
-          path: PagetokenWidget.routePath,
-          builder: (context, params) => PagetokenWidget(),
-        ),
-        FFRoute(
           name: HomePageWidget.routeName,
           path: HomePageWidget.routePath,
           requireAuth: true,
@@ -220,6 +215,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               structBuilder: DatatypeObreiroStruct.fromSerializableMap,
             ),
           ),
+        ),
+        FFRoute(
+          name: PagetokenWidget.routeName,
+          path: PagetokenWidget.routePath,
+          builder: (context, params) => PagetokenWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

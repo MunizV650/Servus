@@ -437,7 +437,12 @@ class _AddObreiroWidgetState extends State<AddObreiroWidget>
                                       alignment:
                                           AlignmentDirectional(-1.0, 0.0),
                                       child: Text(
-                                        dateTimeFormat("d/M/y", _model.pmtdata),
+                                        dateTimeFormat(
+                                          "d/M/y",
+                                          _model.pmtdata,
+                                          locale: FFLocalizations.of(context)
+                                              .languageCode,
+                                        ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(

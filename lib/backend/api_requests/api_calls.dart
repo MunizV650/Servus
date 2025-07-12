@@ -8,40 +8,6 @@ export 'api_manager.dart' show ApiCallResponse;
 
 const _kPrivateApiFunctionName = 'ffPrivateApiCall';
 
-class ApiRecuperarSenhaCall {
-  static Future<ApiCallResponse> call({
-    String? userToken =
-        'eyJhbGciOiJIUzI1NiIsImtpZCI6ImZHS1UvbS90c0NFK0UwTGoiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3hwd215ZWNzc3ZqamdzcG9kZnd6LnN1cGFiYXNlLmNvL2F1dGgvdjEiLCJzdWIiOiI2MGNmOTEzMi0yOWQ5LTRmZjAtYTA4Mi0xZDdlNzI5MWJkN2UiLCJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNzMyMzE2MTA1LCJpYXQiOjE3MzIzMTI1MDUsImVtYWlsIjoibXVuaXp0d0Bob3RtYWlsLmNvbSIsInBob25lIjoiIiwiYXBwX21ldGFkYXRhIjp7InByb3ZpZGVyIjoiZW1haWwiLCJwcm92aWRlcnMiOlsiZW1haWwiXX0sInVzZXJfbWV0YWRhdGEiOnsiZW1haWwiOiJtdW5penR3QGhvdG1haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJwaG9uZV92ZXJpZmllZCI6ZmFsc2UsInN1YiI6IjYwY2Y5MTMyLTI5ZDktNGZmMC1hMDgyLTFkN2U3MjkxYmQ3ZSJ9LCJyb2xlIjoiYXV0aGVudGljYXRlZCIsImFhbCI6ImFhbDEiLCJhbXIiOlt7Im1ldGhvZCI6InBhc3N3b3JkIiwidGltZXN0YW1wIjoxNzMyMzEyNDgxfV0sInNlc3Npb25faWQiOiI3NzgxOTEwZi0yMDQwLTQxYTktYjE4Yi1mYWE1MjgwZmJlOTAiLCJpc19hbm9ueW1vdXMiOmZhbHNlfQ.Lif_EzNh0TxLboIEtPiA9OU_cfQf20CfiwkdwyH3aa4',
-    String? email = 'muniztw@hotmail.com',
-    String? password = 'Jr_220122',
-  }) async {
-    final ffApiRequestBody = '''
-{
-  "email": "${escapeStringForJson(email)}",
-  "password": "${escapeStringForJson(password)}"
-}''';
-    return ApiManager.instance.makeApiCall(
-      callName: 'ApiRecuperarSenha',
-      apiUrl: 'https://xpwmyecssvjjgspodfwz.supabase.co/auth/v1/user',
-      callType: ApiCallType.POST,
-      headers: {
-        'apikey':
-            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inhwd215ZWNzc3ZqamdzcG9kZnd6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzA3NDk4OTMsImV4cCI6MjA0NjMyNTg5M30.rAgBo35l_J7vL8T7WS_pbDtablhXxlrsDTz9Nj3m_NQ',
-        'Authorization': 'Bearer ${userToken}',
-      },
-      params: {},
-      body: ffApiRequestBody,
-      bodyType: BodyType.JSON,
-      returnBody: true,
-      encodeBodyUtf8: false,
-      decodeUtf8: false,
-      cache: false,
-      isStreamingApi: false,
-      alwaysAllowBody: false,
-    );
-  }
-}
-
 class GetCidadesComUfCall {
   static Future<ApiCallResponse> call() async {
     final ffApiRequestBody = '''

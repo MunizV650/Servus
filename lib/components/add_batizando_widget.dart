@@ -1431,7 +1431,12 @@ class _AddBatizandoWidgetState extends State<AddBatizandoWidget>
                                         child: Text(
                                           valueOrDefault<String>(
                                             dateTimeFormat(
-                                                "d/M/y", _model.datePicked1),
+                                              "d/M/y",
+                                              _model.datePicked1,
+                                              locale:
+                                                  FFLocalizations.of(context)
+                                                      .languageCode,
+                                            ),
                                             'Dt Nascimento',
                                           ),
                                           textAlign: TextAlign.start,
@@ -1572,7 +1577,12 @@ class _AddBatizandoWidgetState extends State<AddBatizandoWidget>
                                         child: Text(
                                           valueOrDefault<String>(
                                             dateTimeFormat(
-                                                "d/M/y", _model.datePicked2),
+                                              "d/M/y",
+                                              _model.datePicked2,
+                                              locale:
+                                                  FFLocalizations.of(context)
+                                                      .languageCode,
+                                            ),
                                             'Dt Conversão',
                                           ),
                                           textAlign: TextAlign.start,
@@ -1721,7 +1731,12 @@ class _AddBatizandoWidgetState extends State<AddBatizandoWidget>
                                         child: Text(
                                           valueOrDefault<String>(
                                             dateTimeFormat(
-                                                "d/M/y", _model.datePicked3),
+                                              "d/M/y",
+                                              _model.datePicked3,
+                                              locale:
+                                                  FFLocalizations.of(context)
+                                                      .languageCode,
+                                            ),
                                             'Dt Prévia',
                                           ),
                                           textAlign: TextAlign.start,
@@ -1861,7 +1876,12 @@ class _AddBatizandoWidgetState extends State<AddBatizandoWidget>
                                         child: Text(
                                           valueOrDefault<String>(
                                             dateTimeFormat(
-                                                "d/M/y", _model.datePicked4),
+                                              "d/M/y",
+                                              _model.datePicked4,
+                                              locale:
+                                                  FFLocalizations.of(context)
+                                                      .languageCode,
+                                            ),
                                             'Dt Cadastro',
                                           ),
                                           textAlign: TextAlign.start,

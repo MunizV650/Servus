@@ -17,7 +17,6 @@ export '/page_tp_logradouro/page_tp_logradouro_widget.dart'
     show PageTpLogradouroWidget;
 export '/page_tp_usuario/page_tp_usuario_widget.dart' show PageTpUsuarioWidget;
 export '/page_cidade/page_cidade_widget.dart' show PageCidadeWidget;
-export '/pagetoken/pagetoken_widget.dart' show PagetokenWidget;
 export '/home_page/home_page_widget.dart' show HomePageWidget;
 export '/page_tipo_telefone/page_tipo_telefone_widget.dart'
     show PageTipoTelefoneWidget;
@@ -27,3 +26,4 @@ export '/page_membro/page_membro_widget.dart' show PageMembroWidget;
 export '/page_telefone/page_telefone_widget.dart' show PageTelefoneWidget;
 export '/page_usuario/page_usuario_widget.dart' show PageUsuarioWidget;
 export '/page_obreiro/page_obreiro_widget.dart' show PageObreiroWidget;
+export '/pagetoken/pagetoken_widget.dart' show PagetokenWidget;

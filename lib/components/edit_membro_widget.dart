@@ -1474,7 +1474,12 @@ class _EditMembroWidgetState extends State<EditMembroWidget>
                                         child: Text(
                                           valueOrDefault<String>(
                                             dateTimeFormat(
-                                                "d/M/y", _model.pmtDtnasc),
+                                              "d/M/y",
+                                              _model.pmtDtnasc,
+                                              locale:
+                                                  FFLocalizations.of(context)
+                                                      .languageCode,
+                                            ),
                                             'Dt Nasc',
                                           ),
                                           textAlign: TextAlign.start,
@@ -1618,7 +1623,12 @@ class _EditMembroWidgetState extends State<EditMembroWidget>
                                         child: Text(
                                           valueOrDefault<String>(
                                             dateTimeFormat(
-                                                "d/M/y", _model.pmtDtConv),
+                                              "d/M/y",
+                                              _model.pmtDtConv,
+                                              locale:
+                                                  FFLocalizations.of(context)
+                                                      .languageCode,
+                                            ),
                                             'Dt Conversão',
                                           ),
                                           textAlign: TextAlign.start,
@@ -1770,7 +1780,12 @@ class _EditMembroWidgetState extends State<EditMembroWidget>
                                         child: Text(
                                           valueOrDefault<String>(
                                             dateTimeFormat(
-                                                "d/M/y", _model.pmtDtBat),
+                                              "d/M/y",
+                                              _model.pmtDtBat,
+                                              locale:
+                                                  FFLocalizations.of(context)
+                                                      .languageCode,
+                                            ),
                                             'Dt Batismo',
                                           ),
                                           textAlign: TextAlign.start,
@@ -1867,8 +1882,13 @@ class _EditMembroWidgetState extends State<EditMembroWidget>
                                             AlignmentDirectional(0.0, 0.0),
                                         child: Text(
                                           valueOrDefault<String>(
-                                            dateTimeFormat("d/M/y",
-                                                _model.pmtDtCredencial),
+                                            dateTimeFormat(
+                                              "d/M/y",
+                                              _model.pmtDtCredencial,
+                                              locale:
+                                                  FFLocalizations.of(context)
+                                                      .languageCode,
+                                            ),
                                             'Dt Credencial',
                                           ),
                                           textAlign: TextAlign.start,
@@ -2517,13 +2537,13 @@ class _EditMembroWidgetState extends State<EditMembroWidget>
                                   _model.uploadedFileUrl_uploadFoto,
                                   width: 60.0,
                                   height: 60.0,
-                                  fit: BoxFit.cover,
+                                  fit: BoxFit.contain,
                                   errorBuilder: (context, error, stackTrace) =>
                                       Image.asset(
                                     'assets/images/error_image.jpeg',
                                     width: 60.0,
                                     height: 60.0,
-                                    fit: BoxFit.cover,
+                                    fit: BoxFit.contain,
                                   ),
                                 ),
                               ),
